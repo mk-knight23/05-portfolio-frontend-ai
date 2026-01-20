@@ -1,13 +1,31 @@
 {
   "name": "05-portfolio-site-v2",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "2.0.0",
+  "description": "Modern dark neon portfolio template with React, TypeScript, Tailwind CSS, and Framer Motion animations.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
+  "keywords": [
+    "portfolio",
+    "neon",
+    "dark-theme",
+    "react",
+    "typescript",
+    "tailwind",
+    "template"
+  ],
+  "author": "Kazi Musharraf",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-knight23/05-portfolio-site-v2.git"
+  },
+  "homepage": "https://05-portfolio-site-v2.vercel.app",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
