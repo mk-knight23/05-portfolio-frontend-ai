@@ -115,7 +115,7 @@ function App() {
       </section>
 
       <footer className="py-12 text-center text-slate-400 text-sm">
-        <p>© 2024 Kazi Website. Part of the 30 Projects Rebuild Wave.</p>
+        <p>© 2026 Kazi Musharraf. Part of the 30 Projects Modernization Wave.</p>
       </footer>
     </div>
   );
