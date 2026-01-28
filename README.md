@@ -1,57 +1,62 @@
-# 05-portfolio-personal-site-nextjs
+# Kazi Musharraf — Frontend Engineer (AI Products)
 
-**Primary public portfolio website built with React + Vite**
-
-Part of the MUSHARRAF KAZI portfolio ecosystem — showcasing AI engineering work,
-VIBE Ecosystem, and selected projects.
+**Building AI-Powered Interfaces, Chat UIs & Real-Time Experiences**
 
 ---
 
-## About This Site
-
-This is the primary public portfolio website for [MUSHARRAF KAZI](https://github.com/mk-knight23),
-**AI Engineer & Indie Builder** specializing in Agentic AI, Developer Tools,
-Multi-LLM Routing, and SaaS Automation.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-818CF8?style=for-the-badge&logo=github)](https://mk-knight23.github.io/05-portfolio-frontend-ai/)
+[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=for-the-badge&logo=github)](https://github.com/mk-knight23/05-portfolio-frontend-ai)
 
 ---
 
-## VIBE Ecosystem (Flagship Project)
+## About
 
-**Founder & AI Engineer**
+Frontend Engineer specializing in building AI-powered products, chat interfaces, and real-time data visualizations with React and TypeScript. Currently building the **VIBE Ecosystem** — a multi-product AI developer platform.
 
-A multi-product AI developer platform:
+**Experience:** Project Engineer (TURBO) at Wipro (Jul 2022 – Present)
 
-| Product | Description |
-|---------|-------------|
-| VIBE CLI | Multi-agent AI coding tool with TUI, multi-LLM router, execution modes (Ask / Code / Debug / Architect / Shell / Agent), security-first approvals, rollback |
-| VIBE VS Code | Multi-agent assistant with state-machine orchestration, real-time streaming chat, unified tool system |
-| VIBE Web | Documentation and onboarding hub for the ecosystem |
-| VIBE Chat | AI web app & website builder powered by generative agents |
+---
 
-**Technical Highlights:**
-- Hierarchical RAG (H-RAG) + Decision Agents + Orchestrator
-- Multi-provider LLM routing with fallback and evaluation
-- 55-feature roadmap with 4-tier system prompt strategy
+## Features
+
+- **Resume & Cover Letter Sections** — Complete professional history and 3-6 month impact plan
+- **VIBE Ecosystem Showcase** — Multi-product AI developer platform overview
+- **Retro 90s Design** — Nostalgic Windows 95/98 aesthetic
+- **Contact & Social Links** — Direct access to email, phone, GitHub, and LinkedIn
 
 ---
 
 ## Tech Stack
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Vercel (Deployment)
+- **Frontend:** React 18, TypeScript
+- **Styling:** Inline styles (retro Windows 95 aesthetic)
+- **Animations:** Framer Motion
+- **Build:** Vite
+- **Deployment:** GitHub Pages
 
 ---
 
-## Getting Started
+## Deployment
+
+| Platform | URL |
+|----------|-----|
+| **GitHub Pages** | [mk-knight23.github.io/05-portfolio-frontend-ai](https://mk-knight23.github.io/05-portfolio-frontend-ai/) |
+
+---
+
+## Local Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/mk-knight23/05-portfolio-frontend-ai.git
+
+# Navigate to project
+cd 05-portfolio-frontend-ai
+
 # Install dependencies
 npm install
 
-# Run development server
+# Start development server
 npm run dev
 
 # Build for production
@@ -60,27 +65,16 @@ npm run build
 
 ---
 
-## Portfolio Structure
+## Contact
 
-This repository is part of a 60-project portfolio ecosystem:
-
-| Category | Range | Description |
-|----------|-------|-------------|
-| Portfolio | 01-08 | Core portfolio and personal sites |
-| Web | 09-24 | Web applications and SaaS tools |
-| Games | 25-34 | Interactive browser games |
-| Tools | 35-44 | Developer utilities and automation |
-| Starters | 45-56 | Project templates and boilerplates |
-| Learn | 57-60 | Practice and learning projects |
+- **Email:** [mk.knight970@gmail.com](mailto:mk.knight970@gmail.com)
+- **Phone:** +91 9765490536
+- **GitHub:** [mk-knight23](https://github.com/mk-knight23)
+- **LinkedIn:** [kazi-musharraf-0674871a4](https://www.linkedin.com/in/kazi-musharraf-0674871a4)
+- **Location:** Hyderabad, India
 
 ---
 
-## Connect
+*Kazi Musharraf — Frontend Engineer (AI Products) — Part of 8-portfolio ecosystem*
 
-- **Email:** mk.knight970@gmail.com
-- **GitHub:** [@mk-knight23](https://github.com/mk-knight23)
-- **LinkedIn:** [kazi-musharraf](https://www.linkedin.com/in/kazi-musharraf-0674871a4)
-
----
-
-*MIT License*
+*Last Updated: January 2025*

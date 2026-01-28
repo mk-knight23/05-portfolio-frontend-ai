@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Terminal,
   Code2,
@@ -9,13 +8,9 @@ import {
   Mail,
   Github,
   Linkedin,
-  ChevronDown,
-  ArrowRight,
-  Cpu,
-  Layers,
-  Zap,
-  Shield,
-  CheckCircle2
+  Phone,
+  Heart,
+  Star
 } from 'lucide-react';
 
 // VIBE Ecosystem Data
@@ -23,14 +18,14 @@ const vibeProducts = [
   {
     name: 'VIBE CLI',
     tagline: 'Multi-agent AI coding tool',
-    description: 'Single-command TUI, multi-LLM router, execution modes (Ask/Code/Debug/Architect/Shell/Agent), security-first approvals, rollback.',
+    description: 'Single-command TUI, multi-LLM router, execution modes, security-first approvals.',
     icon: Terminal,
     status: 'In Development'
   },
   {
     name: 'VIBE VS Code',
     tagline: 'Multi-agent IDE assistant',
-    description: 'CLI parity, state-machine orchestration, real-time streaming chat, unified tool system.',
+    description: 'CLI parity, state-machine orchestration, real-time streaming chat.',
     icon: Code2,
     status: 'Planned'
   },
@@ -52,62 +47,40 @@ const vibeProducts = [
 
 const selectedProjects = [
   {
-    name: 'Country Explorer',
-    category: 'Web',
-    tech: 'React',
-    description: 'Country data exploration dashboard'
+    name: 'AI Chat Interface',
+    category: 'Frontend',
+    tech: 'React 19',
+    description: 'High-performance streaming chat UI for agentic systems'
   },
   {
-    name: 'Recipe Finder',
-    category: 'Web',
-    tech: 'Vue',
-    description: 'Recipe discovery application'
+    name: 'LLM Dashboard',
+    category: 'Frontend',
+    tech: 'Next.js',
+    description: 'Real-time analytics for multi-LLM routing metrics'
   },
   {
-    name: 'Meme Generator',
-    category: 'Web',
-    tech: 'React',
-    description: 'Custom meme creation tool'
+    name: 'Prompt Canvas',
+    category: 'UI/UX',
+    tech: 'TypeScript',
+    description: 'Interactive IDE-like experience for prompt engineering'
   },
   {
-    name: 'Mini Games',
-    category: 'Game',
-    tech: 'React',
-    description: 'Collection of mini-games'
+    name: 'Agent Workflow Designer',
+    category: 'Frontend',
+    tech: 'React Flow',
+    description: 'Visual graph editor for building multi-agent systems'
   }
 ];
 
 const skillsByCategory = {
-  'AI & Agents': ['RAG', 'H-RAG', 'Multi-Agent Systems', 'Tooling', 'LLM Routing'],
-  'Developer Platforms': ['CLI Tools', 'VS Code Extensions', 'Automation', 'DX'],
-  'Engineering & Stack': ['Python', 'Node.js', 'React', 'TypeScript', 'APIs', 'Cloud'],
-  'LLM Ecosystem': ['OpenAI', 'Claude', 'Gemini', 'OpenRouter', 'Ollama']
+  '⚛️ Generative UI': ['React 19', 'Next.js', 'Framer Motion', 'Tailwind v4'],
+  '🤖 AI Integration': ['Streaming APIs', 'LLM SDKs', 'OpenRouter', 'Vector DBs'],
+  '🛠️ Core Engineering': ['TypeScript', 'Node.js', 'State Management', 'Web Perf'],
+  '🧠 AI Workflow': ['Agentic UX', 'Canvas Interfaces', 'Multi-modal', 'Prompts']
 };
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
-
-  useEffect(() => {
-    setIsLoaded(true);
-
-    const handleScroll = () => {
-      const sections = ['hero', 'about', 'vibe', 'work', 'skills', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const lastUpdated = 'January 2025';
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -117,371 +90,972 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-indigo-500/30">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="font-bold text-lg tracking-tight">MK</div>
-          <div className="hidden md:flex items-center gap-8">
-            {['about', 'vibe', 'work', 'skills', 'contact'].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollTo(section)}
-                className={`text-sm uppercase tracking-wider transition-colors ${
-                  activeSection === section ? 'text-indigo-400' : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                {section}
-              </button>
-            ))}
-          </div>
-          <a
-            href="https://github.com/mk-knight23"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+    <div className="min-h-screen" style={{
+      background: '#c0c0c0',
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'20\' height=\'20\' fill=\'%23c0c0c0\'/%3E%3Crect width=\'10\' height=\'10\' fill=\'%23b0b0b0\'/%3E%3Crect x=\'10\' y=\'10\' width=\'10\' height=\'10\' fill=\'%23b0b0b0\'/%3E%3C/svg%3E")'
+    }}>
+      {/* Retro Marquee Banner */}
+      <div style={{
+        background: '#000080',
+        color: '#00ff00',
+        padding: '4px',
+        fontFamily: '"Courier New", monospace',
+        fontSize: '12px',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap'
+      }}>
+        <motion.div
+          animate={{ x: ['100%', '-100%'] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          style={{ display: 'inline-block' }}
+        >
+          ★★★ WELCOME TO MY HOMEPAGE ★★★ FEATURING VIBE ECOSYSTEM ★★★ 60+ PROJECTS ★★★ AI ENGINEERING ★★★ LAST UPDATED: {lastUpdated} ★★★ ESTABLISHED 2025 ★★★
+        </motion.div>
+      </div>
+
+      {/* Retro Header */}
+      <header style={{
+        background: '#800080',
+        padding: '20px',
+        border: '3px outset #ffffff'
+      }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <motion.h1
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            style={{
+              fontFamily: '"Times New Roman", serif',
+              fontSize: '48px',
+              color: '#ffffff',
+              textShadow: '3px 3px 0px #000000',
+              textAlign: 'center',
+              marginBottom: '10px',
+              letterSpacing: '2px'
+            }}
           >
-            <Github className="w-5 h-5" />
-          </a>
+            Kazi Musharraf
+          </motion.h1>
+          <p style={{
+            fontFamily: '"Courier New", monospace',
+            color: '#ffff00',
+            textAlign: 'center',
+            fontSize: '14px'
+          }}>
+            ~ Frontend Engineer (AI Products) ~
+          </p>
+        </div>
+      </header>
+
+      {/* Navigation Table */}
+      <nav style={{
+        background: '#c0c0c0',
+        padding: '10px',
+        border: '2px inset #808080',
+        maxWidth: '800px',
+        margin: '20px auto'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+          {['about', 'vibe', 'work', 'skills', 'resume', 'contact'].map((section) => (
+            <button
+              key={section}
+              onClick={() => scrollTo(section)}
+              style={{
+                background: '#c0c0c0',
+                border: '2px outset #ffffff',
+                padding: '8px 16px',
+                fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.1s'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = '#000080';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = '#c0c0c0';
+                e.currentTarget.style.color = '#000000';
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.background = '#000080';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.background = '#c0c0c0';
+                e.currentTarget.style.color = '#000000';
+              }}
+            >
+              {section.toUpperCase()}
+            </button>
+          ))}
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-indigo-400 font-medium mb-6">AI Engineer & Indie Builder</p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-              MUSHARRAF <span className="text-slate-600">KAZI</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl mx-auto">
-              Building the VIBE Ecosystem — a multi-product AI developer platform focused on
-              AI-powered coding workflows, multi-agent orchestration, and production-grade tooling.
+      {/* Main Content */}
+      <main style={{ maxWidth: '800px', margin: '0 auto', padding: '0 10px' }}>
+        {/* Hero Section */}
+        <section id="hero" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <div style={{
+            border: '2px inset #808080',
+            padding: '20px',
+            background: '#ffffcc'
+          }}>
+            <p style={{
+              fontFamily: '"Courier New", monospace',
+              fontSize: '14px',
+              lineHeight: '1.8',
+              color: '#000000',
+              textAlign: 'center'
+            }}>
+              <span style={{ color: '#ff0000', fontWeight: 'bold' }}>»»</span> GREETINGS, NET SURFER! <span style={{ color: '#ff0000', fontWeight: 'bold' }}>««</span>
+              <br /><br />
+              You have reached the personal homepage of <strong>Musharraf Kazi</strong>.
+              I am a <span style={{ background: '#00ff00', padding: '2px 6px' }}>Frontend Engineer</span> specializing in
+              AI-powered user interfaces and modern web technologies.
+              <br /><br />
+              Currently working as <span style={{ color: '#0000ff' }}>Project Engineer (TURBO)</span> at <strong>Wipro</strong>.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => scrollTo('vibe')}
-                className="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold transition-all flex items-center gap-2"
-              >
-                Explore VIBE Ecosystem <ArrowRight className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => scrollTo('work')}
-                className="px-8 py-4 bg-white/5 hover:bg-white/10 rounded-xl font-semibold transition-all"
-              >
-                View Projects
-              </button>
-            </div>
-          </motion.div>
-        </div>
+          </div>
 
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ChevronDown className="w-6 h-6 text-slate-600" />
-        </motion.div>
-      </section>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px', flexWrap: 'wrap' }}>
+            <button
+              onClick={() => scrollTo('vibe')}
+              style={{
+                background: '#008000',
+                color: '#ffffff',
+                border: '3px outset #00ff00',
+                padding: '10px 20px',
+                fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                cursor: 'pointer'
+              }}
+            >
+              [ ENTER VIBE ]
+            </button>
+            <button
+              onClick={() => scrollTo('work')}
+              style={{
+                background: '#c0c0c0',
+                color: '#000000',
+                border: '3px outset #ffffff',
+                padding: '10px 20px',
+                fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                cursor: 'pointer'
+              }}
+            >
+              [ VIEW PROJECTS ]
+            </button>
+          </div>
+        </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">About</h2>
-            <div className="prose prose-lg text-slate-400">
-              <p className="mb-6 leading-relaxed">
-                AI Engineer and Indie Product Builder specializing in Agentic AI, Developer Tools,
-                Multi-LLM Routing, and SaaS Automation.
-              </p>
-              <p className="mb-6 leading-relaxed">
-                Building the <strong className="text-indigo-400">VIBE Ecosystem</strong> — a multi-product
-                AI developer platform (CLI, VS Code Extension, Web SaaS, and Agents) focused on
-                AI-powered coding workflows, multi-agent orchestration, and production-grade
-                developer tooling.
-              </p>
-              <p className="leading-relaxed">
-                Experienced in <strong className="text-white">system architecture</strong>,
-                <strong className="text-white"> product strategy</strong>,
-                <strong className="text-white"> execution</strong>,
-                <strong className="text-white"> research</strong>, and
-                <strong className="text-white"> full-stack implementation</strong>.
-                Strong interest in AI Agents, Generative AI, Devtools, Cloud, LLM infrastructure,
-                and automation-first platforms.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* VIBE Ecosystem Section */}
-      <section id="vibe" className="py-24 px-6 bg-white/[0.02] border-y border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-2 bg-indigo-500/10 text-indigo-400 rounded-full text-sm font-medium mb-4">
-              Flagship Project
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">VIBE Ecosystem</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Founder & AI Engineer — A multi-product AI developer platform
+        {/* About Section */}
+        <section id="about" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ ABOUT ME ★
+          </h2>
+          <div style={{
+            fontFamily: '"Courier New", monospace',
+            fontSize: '13px',
+            lineHeight: '1.8',
+            color: '#000000'
+          }}>
+            <p style={{ marginBottom: '15px' }}>
+              &gt; NAME: Kazi Musharraf<br />
+              &gt; LOCATION: Hyderabad, India <span style={{ color: '#ff0000' }}>♥</span><br />
+              &gt; OCCUPATION: Frontend Engineer @ Wipro<br />
+              &gt; SPECIALTY: AI Products / Chat UIs / Real-time<br />
+              &gt; STATUS: <span style={{ background: '#00ff00', padding: '0 4px' }}>ONLINE</span>
             </p>
-          </motion.div>
+            <p style={{ marginBottom: '10px' }}>
+              I build <strong style={{ color: '#0000ff' }}>AI-powered interfaces</strong> and streaming chat systems.
+              Currently working on the <span style={{ color: '#ff00ff' }}>VIBE Ecosystem</span> — a multi-product
+              AI developer platform.
+            </p>
+            <p>
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style={{ border: '1px solid #000000', verticalAlign: 'middle' }} />
+              This page is best viewed with <strong>800x600</strong> resolution.
+            </p>
+          </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 gap-6">
+        {/* VIBE Ecosystem Section */}
+        <section id="vibe" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ VIBE ECOSYSTEM ★
+          </h2>
+          <p style={{
+            fontFamily: '"Courier New", monospace',
+            fontSize: '12px',
+            color: '#ff0000',
+            marginBottom: '15px',
+            fontWeight: 'bold'
+          }}>
+            !!! FLAGSHIP PROJECT - UNDER ACTIVE DEVELOPMENT !!!
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '15px'
+          }}>
             {vibeProducts.map((product, index) => (
               <motion.div
                 key={product.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="p-8 bg-white/5 rounded-2xl border border-white/5 hover:border-indigo-500/30 transition-all group"
+                style={{
+                  background: product.status === 'Live' ? '#ccffcc' : '#ffffcc',
+                  border: '2px inset #808080',
+                  padding: '15px'
+                }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-indigo-500/10 rounded-xl group-hover:bg-indigo-500/20 transition-colors">
-                    <product.icon className="w-6 h-6 text-indigo-400" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <div style={{
+                    background: '#c0c0c0',
+                    border: '2px inset #808080',
+                    padding: '8px'
+                  }}>
+                    <product.icon style={{ width: 20, height: 20 }} />
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-semibold">{product.name}</h3>
-                      <span className={`px-2 py-0.5 text-xs rounded-full ${
-                        product.status === 'Live'
-                          ? 'bg-green-500/10 text-green-400'
-                          : 'bg-slate-700/50 text-slate-400'
-                      }`}>
-                        {product.status}
-                      </span>
-                    </div>
-                    <p className="text-indigo-400 text-sm mb-3">{product.tagline}</p>
-                    <p className="text-slate-400 text-sm leading-relaxed">{product.description}</p>
+                  <div>
+                    <h3 style={{
+                      fontFamily: '"Times New Roman", serif',
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      color: '#000080',
+                      margin: 0
+                    }}>
+                      {product.name}
+                    </h3>
+                    <span style={{
+                      fontSize: '10px',
+                      padding: '2px 6px',
+                      background: product.status === 'Live' ? '#00cc00' : product.status === 'In Development' ? '#ffcc00' : '#cccccc',
+                      fontWeight: 'bold'
+                    }}>
+                      {product.status.toUpperCase()}
+                    </span>
                   </div>
                 </div>
+                <p style={{
+                  fontFamily: '"Courier New", monospace',
+                  fontSize: '11px',
+                  color: '#000000',
+                  margin: '5px 0'
+                }}>
+                  <em>{product.tagline}</em>
+                </p>
+                <p style={{
+                  fontFamily: '"Arial", sans-serif',
+                  fontSize: '12px',
+                  color: '#333333'
+                }}>
+                  {product.description}
+                </p>
               </motion.div>
             ))}
           </div>
+        </section>
 
-          {/* Architecture Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-16 p-8 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-2xl border border-white/5"
-          >
-            <h3 className="text-xl font-semibold mb-6">Technical Highlights</h3>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                'Hierarchical RAG (H-RAG) + Decision Agents + Orchestrator',
-                'Multi-provider LLM routing with fallback and evaluation',
-                '55-feature roadmap with 4-tier system prompt strategy',
-                'Competitive analysis across 60 AI coding tools',
-                'Monorepo strategy with ecosystem boundaries',
-                'Security-first architecture'
-              ].map((highlight, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-slate-300 text-sm">{highlight}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        {/* Work Section */}
+        <section id="work" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ PROJECT SHOWCASE ★
+          </h2>
 
-      {/* Work Section */}
-      <section id="work" className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Selected Projects</h2>
-            <p className="text-slate-400 mb-12">A showcase of recent work across web, games, and tools.</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Responsive Card Layout - Mobile Friendly */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '15px',
+            fontFamily: '"Courier New", monospace',
+            fontSize: '12px'
+          }}>
             {selectedProjects.map((project, index) => (
               <motion.div
                 key={project.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="p-6 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-all cursor-pointer group"
+                style={{
+                  background: index % 2 === 0 ? '#ffffff' : '#f0f0f0',
+                  border: '2px inset #808080',
+                  padding: '12px',
+                  cursor: 'pointer'
+                }}
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-1 bg-indigo-500/10 text-indigo-400 rounded text-xs font-medium">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <span style={{
+                    background: '#000080',
+                    color: '#ffffff',
+                    padding: '2px 6px',
+                    fontSize: '10px',
+                    fontWeight: 'bold'
+                  }}>
+                    #{index + 1}
+                  </span>
+                  <span style={{
+                    background: '#00cc00',
+                    padding: '2px 6px',
+                    fontSize: '9px'
+                  }}>
                     {project.category}
                   </span>
-                  <span className="px-2 py-1 bg-slate-700/50 text-slate-400 rounded text-xs">
-                    {project.tech}
-                  </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-indigo-400 transition-colors">
+                <h3 style={{
+                  fontFamily: '"Times New Roman", serif',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  color: '#000080',
+                  margin: '5px 0'
+                }}>
                   {project.name}
                 </h3>
-                <p className="text-slate-400 text-sm">{project.description}</p>
+                <p style={{ fontSize: '10px', color: '#666666', margin: '5px 0' }}>
+                  {project.description}
+                </p>
+                <p style={{ fontSize: '10px', color: '#0000ff', margin: '5px 0 0 0' }}>
+                  <strong>TECH:</strong> {project.tech}
+                </p>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
+          <div style={{ textAlign: 'center', marginTop: '15px' }}>
             <a
               href="https://github.com/mk-knight23?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                color: '#0000ff',
+                textDecoration: 'underline',
+                fontFamily: '"Courier New", monospace',
+                fontSize: '12px'
+              }}
             >
-              View all 60 projects <ExternalLink className="w-4 h-4" />
+              [ CLICK HERE TO VIEW ALL 60+ PROJECTS ] <ExternalLink style={{ width: 14, height: 14 }} />
             </a>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-24 px-6 bg-white/[0.02] border-y border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
-            <p className="text-slate-400 mb-12">Core competencies across AI, development, and product.</p>
-          </motion.div>
+        {/* Skills Section */}
+        <section id="skills" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ SKILLS & EXPERTISE ★
+          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap: '15px'
+          }}>
             {Object.entries(skillsByCategory).map(([category, skills], index) => (
               <motion.div
                 key={category}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 bg-white/5 rounded-xl border border-white/5"
+                style={{
+                  background: '#f0f0f0',
+                  border: '2px inset #808080',
+                  padding: '12px'
+                }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  {category.includes('AI') ? (
-                    <Cpu className="w-5 h-5 text-indigo-400" />
-                  ) : category.includes('Developer') ? (
-                    <Layers className="w-5 h-5 text-indigo-400" />
-                  ) : category.includes('LLM') ? (
-                    <Zap className="w-5 h-5 text-indigo-400" />
-                  ) : (
-                    <Shield className="w-5 h-5 text-indigo-400" />
-                  )}
-                  <h3 className="font-semibold">{category}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
+                <h3 style={{
+                  fontFamily: '"Times New Roman", serif',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  color: '#800080',
+                  marginBottom: '10px',
+                  textDecoration: 'underline'
+                }}>
+                  {category}
+                </h3>
+                <ul style={{
+                  fontFamily: '"Courier New", monospace',
+                  fontSize: '11px',
+                  margin: 0,
+                  paddingLeft: '20px',
+                  color: '#000000'
+                }}>
                   {skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-indigo-500/10 text-indigo-300 rounded-full text-sm"
-                    >
-                      {skill}
-                    </span>
+                    <li key={skill}>{skill}</li>
                   ))}
-                </div>
+                </ul>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
-              Actively building the VIBE Ecosystem and open to opportunities in AI Engineering,
-              Applied AI, Agent Systems, Developer Tools, SaaS Platforms, and Cloud AI roles.
-            </p>
+        {/* Resume Section */}
+        <section id="resume" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ RESUME ★
+          </h2>
+          <p style={{
+            fontFamily: '"Courier New", monospace',
+            fontSize: '13px',
+            color: '#000080',
+            marginBottom: '15px',
+            fontWeight: 'bold'
+          }}>
+            Frontend Engineer for AI Products
+          </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <span className="px-4 py-2 bg-slate-800 rounded-full text-sm">
-                <span className="text-slate-400">Location:</span>{' '}
-                <span className="text-white">India</span>
-              </span>
-              <span className="px-4 py-2 bg-slate-800 rounded-full text-sm">
-                <span className="text-slate-400">Available:</span>{' '}
-                <span className="text-green-400">Remote & Hybrid</span>
-              </span>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '20px'
+          }}>
+            {/* Main Content */}
+            <div style={{ gridColumn: '1 / -1' }}>
+              {/* Experience */}
+              <div style={{
+                background: '#ffffcc',
+                border: '2px inset #808080',
+                padding: '15px',
+                marginBottom: '15px'
+              }}>
+                <h3 style={{
+                  fontFamily: '"Times New Roman", serif',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  color: '#000080',
+                  marginBottom: '10px',
+                  textDecoration: 'underline'
+                }}>
+                  EXPERIENCE
+                </h3>
+                <div style={{
+                  fontFamily: '"Courier New", monospace',
+                  fontSize: '12px',
+                  lineHeight: '1.6'
+                }}>
+                  <p style={{ marginBottom: '10px' }}>
+                    <strong>Project Engineer (TURBO)</strong> — <span style={{ color: '#ff0000' }}>Jul 2022 – Present</span><br />
+                    <span style={{ color: '#0000ff' }}>Wipro</span>
+                  </p>
+                  <p style={{ margin: 0, color: '#333333' }}>
+                    Building AI-powered frontend interfaces with React 19, Next.js, and TypeScript.
+                    Working on LLM integration, streaming chat UIs, and agentic systems. Shipped 80+
+                    projects including generative UI components and real-time collaboration tools.
+                  </p>
+                </div>
+              </div>
+
+              {/* Education */}
+              <div style={{
+                background: '#ffffcc',
+                border: '2px inset #808080',
+                padding: '15px',
+                marginBottom: '15px'
+              }}>
+                <h3 style={{
+                  fontFamily: '"Times New Roman", serif',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  color: '#000080',
+                  marginBottom: '10px',
+                  textDecoration: 'underline'
+                }}>
+                  EDUCATION
+                </h3>
+                <div style={{
+                  fontFamily: '"Courier New", monospace',
+                  fontSize: '12px'
+                }}>
+                  <p style={{ margin: 0 }}>
+                    <strong>B.Tech Computer Science & Engineering</strong> — 2022
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* Tech Stack */}
+            <div style={{
+              background: '#f0f0f0',
+              border: '2px inset #808080',
+              padding: '15px'
+            }}>
+              <h3 style={{
+                fontFamily: '"Times New Roman", serif',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                color: '#800080',
+                marginBottom: '10px',
+                textDecoration: 'underline'
+              }}>
+                TECH STACK
+              </h3>
+              <div style={{ fontFamily: '"Courier New", monospace', fontSize: '11px' }}>
+                <p style={{ marginBottom: '8px', fontWeight: 'bold', color: '#000080' }}>Frontend:</p>
+                <p style={{ marginBottom: '12px', margin: '0 0 12px 10px' }}>React 19 • Next.js • TypeScript • Tailwind v4</p>
+
+                <p style={{ marginBottom: '8px', fontWeight: 'bold', color: '#000080' }}>AI / LLM:</p>
+                <p style={{ marginBottom: '12px', margin: '0 0 12px 10px' }}>OpenAI • Claude • LangChain • RAG • Vector DBs</p>
+
+                <p style={{ marginBottom: '8px', fontWeight: 'bold', color: '#000080' }}>Tools:</p>
+                <p style={{ margin: '0 0 0 10px' }}>Framer Motion • Vite • Git • Vercel</p>
+              </div>
+            </div>
+
+            {/* Connect */}
+            <div style={{
+              background: '#f0f0f0',
+              border: '2px inset #808080',
+              padding: '15px'
+            }}>
+              <h3 style={{
+                fontFamily: '"Times New Roman", serif',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                color: '#800080',
+                marginBottom: '10px',
+                textDecoration: 'underline'
+              }}>
+                CONNECT
+              </h3>
+              <div style={{ fontFamily: '"Courier New", monospace', fontSize: '11px' }}>
+                <a href="https://github.com/mk-knight23" target="_blank" rel="noopener"
+                   style={{ color: '#0000ff', textDecoration: 'underline', display: 'block', marginBottom: '8px' }}>
+                  github.com/mk-knight23
+                </a>
+                <a href="https://www.linkedin.com/in/kazi-musharraf-0674871a4" target="_blank" rel="noopener"
+                   style={{ color: '#0000ff', textDecoration: 'underline', display: 'block' }}>
+                  linkedin.com/in/kazi-musharraf
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What I'll Build Section */}
+        <section id="what-ill-build" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <p style={{
+            fontFamily: '"Courier New", monospace',
+            fontSize: '11px',
+            padding: '4px 8px',
+            background: '#ffcc00',
+            color: '#000000',
+            fontWeight: 'bold',
+            display: 'inline-block',
+            marginBottom: '10px'
+          }}>
+            IF YOU HIRE ME
+          </p>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ WHAT I’LL WORK ON ★
+          </h2>
+          <p style={{
+            fontFamily: '"Courier New", monospace',
+            fontSize: '12px',
+            color: '#333333',
+            marginBottom: '15px'
+          }}>
+            First 3–6 months as your Frontend Engineer for AI Products
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '15px'
+          }}>
+            <div style={{
+              background: '#ffffff',
+              border: '2px inset #808080',
+              padding: '12px'
+            }}>
+              <div style={{
+                background: '#000080',
+                color: '#ffffff',
+                padding: '4px 8px',
+                fontSize: '11px',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                marginBottom: '8px'
+              }}>
+                MONTH 1-2
+              </div>
+              <h3 style={{
+                fontFamily: '"Times New Roman", serif',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: '#000080',
+                margin: '5px 0'
+              }}>
+                AI Interface Foundation
+              </h3>
+              <p style={{ fontSize: '11px', color: '#333333', margin: '5px 0' }}>
+                Build streaming chat UIs, LLM response handlers, and loading states.
+                Create reusable components for AI interactions with proper error handling.
+              </p>
+            </div>
+
+            <div style={{
+              background: '#f0f0f0',
+              border: '2px inset #808080',
+              padding: '12px'
+            }}>
+              <div style={{
+                background: '#000080',
+                color: '#ffffff',
+                padding: '4px 8px',
+                fontSize: '11px',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                marginBottom: '8px'
+              }}>
+                MONTH 2-3
+              </div>
+              <h3 style={{
+                fontFamily: '"Times New Roman", serif',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: '#000080',
+                margin: '5px 0'
+              }}>
+                Agentic Workflows
+              </h3>
+              <p style={{ fontSize: '11px', color: '#333333', margin: '5px 0' }}>
+                Implement multi-step agent UIs, progress indicators, and state management.
+                Build visual feedback for long-running AI operations.
+              </p>
+            </div>
+
+            <div style={{
+              background: '#ffffff',
+              border: '2px inset #808080',
+              padding: '12px'
+            }}>
+              <div style={{
+                background: '#000080',
+                color: '#ffffff',
+                padding: '4px 8px',
+                fontSize: '11px',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                marginBottom: '8px'
+              }}>
+                MONTH 3-4
+              </div>
+              <h3 style={{
+                fontFamily: '"Times New Roman", serif',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: '#000080',
+                margin: '5px 0'
+              }}>
+                Performance & Scale
+              </h3>
+              <p style={{ fontSize: '11px', color: '#333333', margin: '5px 0' }}>
+                Optimize for streaming performance, implement caching, and reduce latency.
+                Ensure smooth UX under high-concurrency scenarios.
+              </p>
+            </div>
+
+            <div style={{
+              background: '#f0f0f0',
+              border: '2px inset #808080',
+              padding: '12px'
+            }}>
+              <div style={{
+                background: '#000080',
+                color: '#ffffff',
+                padding: '4px 8px',
+                fontSize: '11px',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                marginBottom: '8px'
+              }}>
+                MONTH 4-6
+              </div>
+              <h3 style={{
+                fontFamily: '"Times New Roman", serif',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: '#000080',
+                margin: '5px 0'
+              }}>
+                Production Features
+              </h3>
+              <p style={{ fontSize: '11px', color: '#333333', margin: '5px 0' }}>
+                Add analytics, A/B testing for AI prompts, and monitoring.
+                Build admin dashboards for prompt management and performance tracking.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" style={{
+          background: '#ffffff',
+          border: '3px outset #ffffff',
+          padding: '20px',
+          marginBottom: '20px'
+        }}>
+          <h2 style={{
+            fontFamily: '"Times New Roman", serif',
+            fontSize: '24px',
+            color: '#800080',
+            borderBottom: '2px solid #800080',
+            paddingBottom: '5px',
+            marginBottom: '15px'
+          }}>
+            ★ GUESTBOOK / CONTACT ★
+          </h2>
+
+          <div style={{
+            background: '#ffffcc',
+            border: '2px inset #808080',
+            padding: '15px',
+            textAlign: 'center'
+          }}>
+            <p style={{
+              fontFamily: '"Courier New", monospace',
+              fontSize: '13px',
+              marginBottom: '15px'
+            }}>
+              Want to get in touch? Feel free to reach out!
+            </p>
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
               <a
                 href="mailto:mk.knight970@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold transition-all"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  background: '#008000',
+                  color: '#ffffff',
+                  border: '3px outset #00ff00',
+                  padding: '8px 16px',
+                  textDecoration: 'none',
+                  fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                  fontSize: '12px',
+                  fontWeight: 'bold'
+                }}
               >
-                <Mail className="w-5 h-5" /> Email Me
+                <Mail style={{ width: 14, height: 14 }} /> EMAIL ME
               </a>
               <a
                 href="https://github.com/mk-knight23"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-xl font-semibold transition-all"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  background: '#c0c0c0',
+                  color: '#000000',
+                  border: '3px outset #ffffff',
+                  padding: '8px 16px',
+                  textDecoration: 'none',
+                  fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                  fontSize: '12px',
+                  fontWeight: 'bold'
+                }}
               >
-                <Github className="w-5 h-5" /> GitHub
+                <Github style={{ width: 14, height: 14 }} /> GITHUB
+              </a>
+              <a
+                href="tel:+919765490536"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  background: '#008080',
+                  color: '#ffffff',
+                  border: '3px outset #00ffff',
+                  padding: '8px 16px',
+                  textDecoration: 'none',
+                  fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                  fontSize: '12px',
+                  fontWeight: 'bold'
+                }}
+              >
+                <Phone style={{ width: 14, height: 14 }} /> CALL
               </a>
               <a
                 href="https://www.linkedin.com/in/kazi-musharraf-0674871a4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-xl font-semibold transition-all"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  background: '#c0c0c0',
+                  color: '#000000',
+                  border: '3px outset #ffffff',
+                  padding: '8px 16px',
+                  textDecoration: 'none',
+                  fontFamily: '"MS Sans Serif", Arial, sans-serif',
+                  fontSize: '12px',
+                  fontWeight: 'bold'
+                }}
               >
-                <Linkedin className="w-5 h-5" /> LinkedIn
+                <Linkedin style={{ width: 14, height: 14 }} /> LINKEDIN
               </a>
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
-            &copy; 2025 MUSHARRAF KAZI. All rights reserved.
+            <p style={{
+              fontFamily: '"Courier New", monospace',
+              fontSize: '11px',
+              marginTop: '15px',
+              color: '#666666'
+            }}>
+              📍 Hyderabad, India | 💼 Remote & Hybrid
+            </p>
+          </div>
+        </section>
+
+        {/* Hit Counter Badge - Now retro-styled as decor */}
+        <div style={{
+          background: '#000000',
+          color: '#00ff00',
+          padding: '8px',
+          textAlign: 'center',
+          border: '3px inset #333333',
+          marginBottom: '20px',
+          fontSize: '10px'
+        }}>
+          <p style={{
+            fontFamily: '"Courier New", monospace',
+            fontSize: '10px',
+            margin: 0,
+            opacity: 0.6
+          }}>
+            ★★ ESTABLISHED 2025 ★★
           </p>
-          <p className="text-slate-600 text-sm">
-            Part of a 60-project portfolio ecosystem
-          </p>
+        </div>
+      </main>
+
+      {/* Retro Footer */}
+      <footer style={{
+        background: '#800080',
+        color: '#ffffff',
+        padding: '20px',
+        border: '3px inset #808080',
+        textAlign: 'center'
+      }}>
+        <p style={{
+          fontFamily: '"Courier New", monospace',
+          fontSize: '12px',
+          margin: '5px 0'
+        }}>
+          © 2025 Kazi Musharraf
+        </p>
+        <p style={{
+          fontFamily: '"Courier New", monospace',
+          fontSize: '11px',
+          margin: '5px 0'
+        }}>
+          Made with <Heart style={{ width: 12, height: 12, display: 'inline', color: '#ff0000' }} /> and lots of coffee
+        </p>
+        <p style={{
+          fontFamily: '"Courier New", monospace',
+          fontSize: '10px',
+          margin: '10px 0 0 0',
+          opacity: 0.8
+        }}>
+          <Star style={{ width: 10, height: 10, display: 'inline' }} />
+          Part of a 60-project portfolio ecosystem
+          <Star style={{ width: 10, height: 10, display: 'inline' }} />
+        </p>
+        <div style={{ marginTop: '15px' }}>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect fill='%23c0c0c0' width='88' height='31'/%3E%3Ctext x='44' y='20' text-anchor='middle' font-family='Arial' font-size='10' fill='%23000080'%3EBEST VIEWED%3C/text%3E%3C/svg%3E"
+            alt="Best viewed with Netscape Navigator"
+            style={{ border: '1px solid #ffffff' }}
+          />
         </div>
       </footer>
     </div>
