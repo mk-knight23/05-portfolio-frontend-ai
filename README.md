@@ -88,7 +88,7 @@ In building this ecosystem, I leverage specialized agent workflows:
 | **Render** | [05-portfolio-frontend-ai.onrender.com](https://05-portfolio-frontend-ai.onrender.com/) |
 | **Cloud Run** | [05-portfolio-frontend-ai.mk-knight970.cloud.run](https://05-portfolio-frontend-ai.mk-knight970.cloud.run/) |
 | **Cloudflare Workers** | [05-portfolio-frontend-ai.mk-knight970.workers.dev](https://05-portfolio-frontend-ai.mk-knight970.workers.dev/) |
-| **Vercel** | [05-portfolio-personal-site-nextjs.vercel.app](https://05-portfolio-personal-site-nextjs.vercel.app/) |
+| **Vercel** | [05-portfolio-frontend-ai.vercel.app](https://05-portfolio-frontend-ai.vercel.app/) |
 | **Netlify** | [05-portfolio-frontend-ai.netlify.app](https://05-portfolio-frontend-ai.netlify.app/) |
 | **GitHub Pages** | [mk-knight23.github.io/05-portfolio-site-v2](https://mk-knight23.github.io/05-portfolio-site-v2/) |
 
