@@ -1,5 +1,11 @@
 # Kazi Musharraf — Frontend Engineer (AI Products)
 
+## 🚀 Live Demo
+
+This portfolio is deployed to multiple platforms:
+
+
+
 **Building AI-Powered Interfaces, Chat UIs & Real-Time Experiences**
 
 ---

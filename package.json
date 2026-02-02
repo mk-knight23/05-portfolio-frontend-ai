@@ -12,7 +12,8 @@
     "type-check": "tsc --noEmit",
     "deploy:gh": "gh-pages -d dist",
     "deploy": "npm run build && npm run deploy:gh",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test:e2e": "playwright test"
   },
   "keywords": [
     "portfolio",
@@ -32,15 +33,16 @@
   "homepage": "https://mk-knight23.github.io/05-portfolio-site-v2/",
   "dependencies": {
     "clsx": "^2.1.1",
+    "express": "^4.21.2",
     "framer-motion": "^12.29.2",
     "lucide-react": "^0.474.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "tailwind-merge": "^2.6.0",
-    "express": "^4.21.2"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.58.1",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
