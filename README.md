@@ -1,178 +1,83 @@
-# Kazi Musharraf — Frontend Engineer (AI Products)
+# 05 Portfolio Frontend AI — Kazi Musharraf
 
-## 🚀 Live Demo
+> **AI Lab portfolio showcasing generative UI and LLM integration.**
+> Built for AI startups and ML-focused teams.
 
-This portfolio is deployed to multiple platforms:
-
-
-
-**Building AI-Powered Interfaces, Chat UIs & Real-Time Experiences**
-
----
-
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-222222?style=for-the-badge&logo=github)](https://mk-knight23.github.io/05-portfolio-site-v2/)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel)](https://05-portfolio-personal-site-nextjs.vercel.app/)
-[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify)](https://05-portfolio-frontend-ai.netlify.app/)
-[![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare)](https://05-portfolio-frontend-ai.mk-knight970.workers.dev/)
-[![Cloud Run](https://img.shields.io/badge/Google_Cloud_Run-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://05-portfolio-frontend-ai.mk-knight970.cloud.run/)
-[![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://05-portfolio-frontend-ai.onrender.com/)
-[![Source](https://img.shields.io/badge/Source-Code-181717?style=for-the-badge&logo=github)](https://github.com/mk-knight23/05-portfolio-frontend-ai)
+[![Live Site](https://img.shields.io/badge/Live%20Site-Frontend%20AI-0891b2?style=for-the-badge&logo=firefox&logoColor=white)](https://mk-knight-frontend-ai.web.app)
+[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=for-the-badge&logo=github)](https://github.com/mk-knight23/05-portfolio-frontend-ai)
+[![Ecosystem](https://img.shields.io/badge/60%20Projects-Ecosystem-10b981?style=for-the-badge)](https://www.mkazi.live)
 
 ---
 
-## About
+## What Is This?
 
-Frontend Engineer specializing in building AI-powered products, chat interfaces, and real-time data visualizations with React and TypeScript. Currently building the **AI-VIBE-ECOSYSTEM v2.0** — a multi-product, agent-driven developer platform.
+This is **Portfolio #05 — Frontend AI**, an AI Lab-themed portfolio showcasing my work in generative UI, LLM integration, and AI-powered interfaces.
 
----
-
-## 🏗️ What I’m Building
-
-I am architecting **AI-VIBE-ECOSYSTEM v2.0**, a human-first developer platform where agents don't just write code—they collaborate within a unified system architecture. This ecosystem exists to bridge the gap between high-level intent and production-grade execution by treating AI as a first-class citizen in the developer's toolkit. This portfolio represents the **AI Product lens** into that system, focusing on the interface between human perception and agentic reasoning.
+One of **eight specialized portfolio experiences**.
 
 ---
 
-## 🧩 The AI-VIBE Products (AI Focus)
+## The Story: AI Meets Interface
 
-While the ecosystem spans 5 products, my work here focuses on the conversational and generative interfaces:
+### The AI-First Frontend
 
-- **AI-VIBE-ChatWeb**: The human-agent conversational hub. I focus on real-time streaming, context window management, and reducing the "hallucination threshold" through better UI feedback.
-- **AI-VIBE-WebBuilder**: Our generative site architect. I work on the frontend mechanisms that allow agents to manipulate design systems and layout components.
-- **AI-VIBE-CLI**: Ensuring the terminal experience provides the same level of agentic insight as our web interfaces.
-- *Integrations*: Deeply synchronized with **Automation** for background agent orchestration and **VSCode** for the developer's creative flow.
+Building interfaces where AI is a **first-class citizen**:
 
----
+```
+User Intent → LLM Processing → Generated UI → Human Refinement → Deploy
+```
 
-## ⚙️ How This Portfolio Fits the Ecosystem
+### Key AI Integrations
 
-This portfolio demonstrates the **Product Logic & LLM UX** layer of the AI-VIBE-ECOSYSTEM. It showcases how we build interfaces that don't just "show" AI, but actually leverage it to improve developer outcomes. It aligns with the **ChatWeb → Builder** workflow, where a conversation becomes a production-ready application through a series of agentic interactions.
-
----
-
-## 🤖 Agents & Workflows I Use
-
-In building this ecosystem, I leverage specialized agent workflows:
-- **UX Architect**: Using agents to simulate user paths and identify friction points in complex AI interactions.
-- **Creative Partner**: Leveraging LLMs to generate design variations and accessibility audits in real-time.
-- **TDD Guide**: Ensuring that every generative UI component is backed by robust, agent-verified tests.
-
----
-
-## 💎 Design & Quality Principles
-
-- **Human-First Development**: AI is a teammate, not a replacement. Every design decision starts with how it empowers the human developer.
-- **Real-Time as Standard**: Streaming responses and immediate visual feedback are requirements for agentic trust.
-- **Nostalgic Innovation**: Choosing a retro 90s aesthetic for this portfolio to remind us that while the tech changes, the core principles of accessible, functional design remain constant.
-- **Tradeoffs Accepted**: Choosing inline styles and a nostalgic theme to prove that great product engineering transcends modern CSS frameworks.
-
----
-
-
-## Features
-
-- **Resume & Cover Letter Sections** — Complete professional history and 3-6 month impact plan
-- **VIBE Ecosystem Showcase** — Multi-product AI developer platform overview
-- **Retro 90s Design** — Nostalgic Windows 95/98 aesthetic
-- **Contact & Social Links** — Direct access to email, phone, GitHub, and LinkedIn
+- **Streaming Responses**: Real-time LLM output
+- **Context Management**: Multi-turn conversations
+- **Tool Calling**: Function execution within chats
+- **RAG Systems**: Knowledge-enhanced responses
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** React 19, TypeScript
-- **Styling:** Inline styles (retro Windows 95 aesthetic)
-- **Animations:** Framer Motion 12
-- **Build:** Vite 6.x
-- **Deployment:** GitHub Pages, Vercel, Netlify
+| Category | Technology |
+|----------|------------|
+| **Frontend** | React 19, TypeScript |
+| **AI Integration** | OpenAI, Claude, LangChain |
+| **Styling** | Tailwind CSS (AI Lab theme) |
+| **Animations** | Framer Motion |
+| **Deployment** | Firebase Hosting |
 
 ---
 
-## Deployment
+## 8 Portfolio Ecosystem
 
-| Platform | URL |
-|----------|-----|
-| **Render** | [05-portfolio-frontend-ai.onrender.com](https://05-portfolio-frontend-ai.onrender.com/) |
-| **Cloud Run** | [05-portfolio-frontend-ai.mk-knight970.cloud.run](https://05-portfolio-frontend-ai.mk-knight970.cloud.run/) |
-| **Cloudflare Workers** | [05-portfolio-frontend-ai.mk-knight970.workers.dev](https://05-portfolio-frontend-ai.mk-knight970.workers.dev/) |
-| **Vercel** | [05-portfolio-frontend-ai.vercel.app](https://05-portfolio-frontend-ai.vercel.app/) |
-| **Netlify** | [05-portfolio-frontend-ai.netlify.app](https://05-portfolio-frontend-ai.netlify.app/) |
-| **GitHub Pages** | [mk-knight23.github.io/05-portfolio-site-v2](https://mk-knight23.github.io/05-portfolio-site-v2/) |
+This is **#05 of 8** specialized experiences:
 
----
-
-## Local Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/mk-knight23/05-portfolio-frontend-ai.git
-
-# Navigate to project
-cd 05-portfolio-frontend-ai
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
+| # | Portfolio | Theme | URL |
+|---|-----------|-------|-----|
+| 01 | DevTools | Terminal/CLI | [Live](https://portfolio-devtools.web.app) |
+| 02 | Fullstack | Clean SaaS | [Live](https://mk-knight-fullstack.web.app) |
+| 03 | Frontend | Motion Design | [Live](https://mk-knight-frontend.web.app) |
+| 04 | Backend | Editorial | [Live](https://mk-knight-backend.web.app) |
+| 05 | **Frontend AI** | AI Lab | [Live](https://mk-knight-frontend-ai.web.app) |
+| 06 | Senior Frontend | Swiss Minimal | [Live](https://mk-knight-senior-frontend.web.app) |
+| 07 | Indie SaaS | Startup Style | [Live](https://portfolio-indie-saas.web.app) |
+| 08 | AI Automation | Systems Flow | [Live](https://portfolio-ai-automation.web.app) |
 
 ---
 
-## Contact
+## About Me
 
-- **Email:** [mk.knight970@gmail.com](mailto:mk.knight970@gmail.com)
-- **Phone:** +91 9765490536
-- **GitHub:** [mk-knight23](https://github.com/mk-knight23)
-- **LinkedIn:** [kazi-musharraf-0674871a4](https://www.linkedin.com/in/kazi-musharraf-0674871a4)
-- **Location:** Hyderabad, India
+**Kazi Musharraf** — AI Engineer & Frontend Developer
 
----
+### Connect
 
-## Additional Features (vNext)
-
-Three focused additions for AI frontend credibility:
-
-### AI Chat Demo Section
-**Why added:** AI interfaces need to demonstrate understanding of LLM streaming UX patterns.
-
-**What changed:** Added a dedicated chat demo section showing simulated streaming conversation. Displays user/AI messages with typewriter cursor animation using CSS keyframes. Retro Windows 95 terminal styling matches the portfolio theme. Shows I understand streaming chat UX without requiring actual API calls.
-
-### Streaming Response Demo
-**Why added:** AI interfaces need to show they understand LLM streaming, not just request-response.
-
-**What changed:** Added a small interactive demo showing simulated streaming text generation. The chat interface demonstrates the character-by-character rendering pattern used in real LLM responses. Pure client-side—no API keys or backend needed.
-
-### Latency Awareness
-**Why added:** AI products live or die by perceived responsiveness.
-
-**What changed:** Chat demo includes visual cues for streaming state (blinking cursor). Messaging emphasizes real-time UX patterns. Shows I understand that AI interfaces need to feel responsive even when generation takes time.
-
-### Intentionally Rejected: Real AI Integration
-I considered wiring up actual OpenAI API calls. Rejected because that would require API keys (security risk) or a backend (violates static-first principle). The chat demo demonstrates the UX pattern without requiring infrastructure. If a hiring manager wants to see real AI, we can talk through it—I'm not burning API quota for a portfolio.
-
+- 📧 **Email**: [mk.knight970@gmail.com](mailto:mk.knight970@gmail.com)
+- 💻 **GitHub**: [@mk-knight23](https://github.com/mk-knight23)
+- 💼 **LinkedIn**: [kazi-musharraf](https://www.linkedin.com/in/kazi-musharraf-0674871a4)
+- 🌐 **Portfolio Hub**: [https://www.mkazi.live](https://www.mkazi.live)
 
 ---
 
-*Last Updated: February 01, 2026*
+*Part of the 60 Projects Ecosystem — Built with AI and ☕*
 
----
-
-## 🌐 Live Web Projects (09-16)
-
-View my deployed web applications:
-
-| # | Project | Live URL | Stack |
-|---|---------|----------|-------|
-| 09 | Geographic Explorer | [Live](https://09-web-geographic-explorer.vercel.app) | React 19 + TypeScript + Tailwind |
-| 10 | Time Display | [Live](https://10-web-time-display.vercel.app) | React 19 + TypeScript + Tailwind |
-| 11 | Keyboard Practice | [Live](https://11-web-keyboard-practice.vercel.app) | React 19 + TypeScript + Tailwind |
-| 12 | Editorial Blog | [Live](https://12-web-editorial-blog.vercel.app) | React 19 + TypeScript + Tailwind |
-| 13 | Brutalist Content | [Live](https://13-web-brutalist-content.vercel.app) | React 19 + TypeScript + Tailwind |
-| 14 | AI Research | [Live](https://14-web-ai-research.vercel.app) | React 19 + TypeScript + Tailwind |
-| 15 | Luxury Boutique | [Live](https://15-web-luxury-boutique.vercel.app) | React 19 + TypeScript + Tailwind |
-| 16 | Editorial Layouts | [Live](https://16-web-editorial-layouts.vercel.app) | React 19 + TypeScript + Tailwind |
-
-*All projects verified live on 2026-02-03*
+*Last Updated: February 2026*
