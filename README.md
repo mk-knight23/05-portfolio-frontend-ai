@@ -137,3 +137,160 @@ MIT
 ---
 
 *Last updated: 2026-02-26*
+
+## 🏗️ Architecture
+
+### Project Structure
+
+```
+05-portfolio-frontend-ai/
+├── src/
+│   ├── components/      # React components
+│   │   ├── AI/         # AI integration components
+│   │   ├── ui/         # Reusable UI components
+│   │   └── layout/     # Layout components
+│   ├── hooks/          # Custom React hooks
+│   ├── utils/          # Utility functions
+│   ├── types/          # TypeScript type definitions
+│   └── main.tsx        # Application entry point
+├── e2e/                # Playwright E2E tests
+├── public/             # Static assets
+├── index.html          # HTML template
+├── vite.config.ts      # Vite configuration
+├── tsconfig.json       # TypeScript configuration
+└── tailwind.config.ts  # Tailwind CSS configuration
+```
+
+### Technology Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React 19 + TypeScript |
+| **Build Tool** | Vite 6 |
+| **Styling** | Tailwind CSS v4 |
+| **Animations** | Framer Motion 12 |
+| **Icons** | Lucide React |
+| **Testing** | Playwright (E2E) |
+| **Deployment** | Firebase, Vercel, Netlify, Cloudflare |
+
+### Key Architectural Patterns
+
+- **Component Composition**: Reusable UI components
+- **Custom Hooks**: Extracted business logic
+- **Context API**: Global state management
+- **Type Safety**: Full TypeScript coverage
+- **Performance**: React.memo, lazy loading
+- **Error Handling**: Error boundaries
+
+### AI Integration
+
+```
+User Input → AI Service → LLM API → Stream Response → UI Update
+```
+
+## 🌐 Deployment
+
+### Live URLs
+
+| Platform | URL |
+|----------|-----|
+| Firebase | https://mk-knight-frontend-ai.web.app |
+| GitHub Pages | [Deployed Link] |
+| Vercel | [Deployed Link] |
+| Netlify | [Deployed Link] |
+
+### Deploy to Firebase
+
+```bash
+# Install Firebase CLI
+npm install -g firebase-tools
+
+# Initialize Firebase (if not done)
+firebase init hosting
+
+# Deploy
+firebase deploy
+```
+
+### Deploy to Vercel
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+```
+
+### Deploy to Netlify
+
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Deploy
+netlify deploy --prod --dir=dist
+```
+
+### Deploy to GitHub Pages
+
+```bash
+# Build and deploy
+npm run deploy
+```
+
+### Environment Variables
+
+Create `.env.local`:
+
+```env
+VITE_OPENAI_API_KEY=your_openai_key
+VITE_CLAUDE_API_KEY=your_claude_key
+VITE_FIREBASE_API_KEY=your_firebase_key
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+### Setup
+
+```bash
+# Clone and navigate
+git clone https://github.com/mk-knight23/05-portfolio-frontend-ai.git
+cd 05-portfolio-frontend-ai
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Making Changes
+
+1. Create a feature branch: `git checkout -b feature/your-feature`
+2. Make your changes to components/pages
+3. Run linting: `npm run lint`
+4. Run type checking: `npm run type-check`
+5. Test locally with Playwright: `npm run test:e2e`
+6. Submit a pull request with description
+
+### Code Style Guidelines
+
+- Use TypeScript for all files
+- Follow React best practices
+- Use functional components with hooks
+- Write descriptive variable names
+- Add comments for complex logic
+- Ensure accessibility (ARIA labels, keyboard nav)
+- Test on mobile and desktop
+
+### Feature Ideas
+
+- Add more AI integrations (GPT-4, Claude)
+- Implement voice interface for AI chat
+- Add code generation demos
+- Create AI-powered project recommendations
+- Build AI-assisted resume builder
+
