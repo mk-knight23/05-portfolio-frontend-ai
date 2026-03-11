@@ -5,6 +5,7 @@
   "description": "Modern dark neon portfolio template with React 19, TypeScript, Tailwind CSS v4, and Framer Motion 12.",
   "type": "module",
   "scripts": {
+    "production": "npm run build && npm start",
     "lint": "eslint .",
     "dev": "vite",
     "build": "tsc && vite build",
