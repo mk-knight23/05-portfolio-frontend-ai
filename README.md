@@ -1,3 +1,5 @@
+# [![CI/CD](https://github.com/mk-knight23/05-portfolio-frontend-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/mk-knight23/05-portfolio-frontend-ai/actions)
+
 # 🚀 05-portfolio-frontend-ai (Collective Production Edition)
 
 ## 💎 Overview
