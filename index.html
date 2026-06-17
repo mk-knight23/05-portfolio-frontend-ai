@@ -151,6 +151,7 @@ html,body{background:transparent!important}
 @media(max-width:720px){.cine-gallery--brutalist .cine-gallery-grid{grid-template-columns:repeat(2,1fr)}.cine-gallery--brutalist figure{grid-column:span 1!important;grid-row:auto!important;aspect-ratio:4/3!important}.cine-gallery--tilt .cine-gallery-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cine-gallery figure,.cine-bg-fallback,.cine-gallery--marquee .cine-gallery-grid{animation:none}}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
@@ -1349,7 +1350,7 @@ html,body{background:transparent!important}
  ];
  function el(t,c){var e=document.createElement(t);if(c)e.className=c;return e;}
  function filter(){if(document.getElementById('liquid-trail'))return;var ns='http://www.w3.org/2000/svg',s=document.createElementNS(ns,'svg');s.setAttribute('width','0');s.setAttribute('height','0');s.style.position='absolute';s.innerHTML='<filter id="liquid-trail"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G"/></filter>';document.body.appendChild(s);}
- function stage(){if(document.querySelector('.cine-stage'))return;var st=el('div','cine-stage');st.setAttribute('aria-hidden','true');st.appendChild(el('div','cine-bg-fallback'));var v=document.createElement('video');v.src='media/hero-bg.mp4';v.poster='media/hero-poster.jpg';v.autoplay=v.loop=v.muted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('muted','');v.onerror=function(){v.style.display='none';};st.appendChild(v);document.body.insertBefore(st,document.body.firstChild);document.body.insertBefore(el('div','cine-tint'),st.nextSibling);var b=el('div','cine-brand');b.innerHTML='KAZI&nbsp;<b>MUSHARRAF</b>';document.body.appendChild(b);}
+ function stage(){if(document.querySelector('.cine-stage'))return;var st=el('div','cine-stage');st.setAttribute('aria-hidden','true');st.appendChild(el('div','cine-bg-fallback'));var v=document.createElement('video');v.src='media/hero-bg.mp4';v.poster='media/hero-poster.jpg';v.autoplay=v.loop=v.muted=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('muted','');v.onerror=function(){v.style.display='none';};st.appendChild(v);document.body.insertBefore(st,document.body.firstChild);document.body.insertBefore(el('div','cine-tint'),st.nextSibling);var b=el('div','cine-brand');b.innerHTML='MUSHARRAF&nbsp;<b>KAZI</b>';document.body.appendChild(b);}
  function setTheme(k){var t=THEMES.filter(function(x){return x.k===k;})[0]||THEMES[0];var r=document.documentElement;r.style.setProperty('--cine-accent',t.a);r.style.setProperty('--cine-ink',t.i);r.setAttribute('data-cine-theme',t.k);try{localStorage.setItem('cineTheme',t.k);}catch(e){}var sw=document.querySelector('.cine-tsw');if(sw){[].forEach.call(sw.children,function(btn){btn.setAttribute('aria-pressed',btn.getAttribute('data-k')===t.k);});}}
  function switcher(){
   var variant=CFG.tsw||'pill';
@@ -1386,6 +1387,43 @@ html,body{background:transparent!important}
  function ripple(){if(reduce)return;var c=el('div','cine-ripple');document.body.appendChild(c);var N=80,p=[],i;for(i=0;i<N;i++){var d=el('div','cine-dot');d.style.opacity='0';c.appendChild(d);p.push({el:d,x:0,y:0,age:0,a:false});}var last={x:0,y:0},cur=0;window.addEventListener('mousemove',function(e){var dx=e.clientX-last.x,dy=e.clientY-last.y;if(Math.sqrt(dx*dx+dy*dy)<25)return;last={x:e.clientX,y:e.clientY};var r=p[cur%N];cur++;r.x=e.clientX;r.y=e.clientY;r.age=0;r.a=true;});(function t(){for(var k=0;k<N;k++){var r=p[k];if(!r.a)continue;r.age+=.012;if(r.age>=1){r.a=false;r.el.style.opacity='0';continue;}var s=20+r.age*280,o=1-Math.pow(r.age,1.2);r.el.style.transform='translate('+(r.x-s/2)+'px,'+(r.y-s/2)+'px)';r.el.style.width=s+'px';r.el.style.height=s+'px';r.el.style.opacity=o;}requestAnimationFrame(t);})();}
  function init(){filter();stage();switcher();var saved;try{saved=localStorage.getItem('cineTheme');}catch(e){}setTheme(saved||CFG.theme||'devtools');gallery();tabify();ripple();}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<script id="cine-3d">(function(){
+ function init(){
+  var T=window.THREE; if(!T) return;
+  var host=document.querySelector('.hero')||document.body;
+  try{var c=document.createElement('canvas');if(!(c.getContext('webgl')||c.getContext('experimental-webgl')))return;}catch(e){return;}
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wrap=document.createElement('div');
+  wrap.style.cssText='position:absolute;inset:0;z-index:0;pointer-events:none';
+  if(getComputedStyle(host).position==='static')host.style.position='relative';
+  host.insertBefore(wrap,host.firstChild);
+  [].forEach.call(host.children,function(ch){if(ch!==wrap&&getComputedStyle(ch).position==='static'){ch.style.position='relative';ch.style.zIndex='2';}});
+  var W=host.clientWidth||window.innerWidth,H=host.clientHeight||520;
+  var acc=(getComputedStyle(document.documentElement).getPropertyValue('--cine-accent')||'217,70,239').trim();
+  var ar=acc.split(',').map(Number); var COL=(ar[0]<<16)+(ar[1]<<8)+ar[2];
+  var scene=new T.Scene();
+  var cam=new T.PerspectiveCamera(55,W/H,0.1,100); cam.position.z=14;
+  var rnd; try{rnd=new T.WebGLRenderer({alpha:true,antialias:true});}catch(e){return;}
+  rnd.setPixelRatio(Math.min(window.devicePixelRatio,2)); rnd.setSize(W,H); wrap.appendChild(rnd.domElement);
+  var grp=new T.Group(); scene.add(grp);
+  var core=new T.Mesh(new T.IcosahedronGeometry(2.4,1),new T.MeshBasicMaterial({color:COL,wireframe:true,transparent:true,opacity:0.55})); grp.add(core);
+  var core2=new T.Mesh(new T.IcosahedronGeometry(1.5,0),new T.MeshBasicMaterial({color:0xffffff,wireframe:true,transparent:true,opacity:0.18})); grp.add(core2);
+  scene.add(new T.AmbientLight(0xffffff,0.8));
+  var labels=['AGENTS','SAAS','AUTOMATION','DEV TOOLS','INFRA','RESEARCH']; var nodes=[];
+  function sprite(txt){var cv=document.createElement('canvas');cv.width=256;cv.height=64;var x=cv.getContext('2d');x.fillStyle='rgba('+acc+',1)';x.font='bold 30px Arial';x.textAlign='center';x.textBaseline='middle';x.shadowColor='rgba(0,0,0,.6)';x.shadowBlur=6;x.fillText(txt,128,34);var tx=new T.CanvasTexture(cv);var sp=new T.Sprite(new T.SpriteMaterial({map:tx,transparent:true}));sp.scale.set(3.2,0.8,1);return sp;}
+  labels.forEach(function(l,i){var a=(i/labels.length)*Math.PI*2;var r=6+(i%2)*1.6;var ndot=new T.Mesh(new T.SphereGeometry(0.28,16,16),new T.MeshBasicMaterial({color:COL}));var sp=sprite(l);sp.position.y=0.9;var node=new T.Group();node.add(ndot);node.add(sp);node.userData={a:a,r:r,sp:0.15+(i%3)*0.05,y:(i%2?1:-1)*1.2};grp.add(node);nodes.push(node);var pts=[];for(var k=0;k<=64;k++){var t=k/64*Math.PI*2;pts.push(new T.Vector3(Math.cos(t)*r,node.userData.y*0.4,Math.sin(t)*r));}var ring=new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:COL,transparent:true,opacity:0.12}));grp.add(ring);});
+  var mx=0,my=0;
+  window.addEventListener('mousemove',function(e){mx=(e.clientX/window.innerWidth-0.5);my=(e.clientY/window.innerHeight-0.5);});
+  window.addEventListener('resize',function(){W=host.clientWidth;H=host.clientHeight||520;cam.aspect=W/H;cam.updateProjectionMatrix();rnd.setSize(W,H);});
+  var running=true;
+  document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running&&!reduce)loop();});
+  function frame(){core.rotation.y+=0.0025;core.rotation.x+=0.0012;core2.rotation.y-=0.004;nodes.forEach(function(n){var u=n.userData;u.a+=u.sp*0.01;n.position.set(Math.cos(u.a)*u.r,u.y+Math.sin(u.a*1.3)*0.5,Math.sin(u.a)*u.r);});grp.rotation.y+=(mx*0.5-grp.rotation.y)*0.04;grp.rotation.x+=(my*0.3-grp.rotation.x)*0.04;rnd.render(scene,cam);}
+  function loop(){if(!running)return;if(!reduce)requestAnimationFrame(loop);frame();}
+  if(reduce){frame();}else loop();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(init,300);});else setTimeout(init,300);
 })();
 </script>
 </body>
